@@ -1,0 +1,3 @@
+# MODS/RDF Working Group
+The motivation behind this group is the development of a MODS/RDF ontology that will allow MODS/XML users to express their existing MODS records in RDF - interoperably - that is, according to an agreed-upon ontology. So the mission of this group is to develop a MODS ontology as well as a conversion tool (e.g. stylesheet) to convert existing MODS XML. We are not developing a bibliographic ontology from the ground up. The work is based on MODS XML. 
+The basis for this work will be the LC MODS RDF ontology, and stylesheet; see http://www.loc.gov/standards/mods/modsrdf/ .
