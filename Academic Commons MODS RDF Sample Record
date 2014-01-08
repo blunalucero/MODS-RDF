@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:identifier="http://id.loc.gov/vocabulary/identifier/"
+         xmlns:relator="http://id.loc.gov/vocabulary/relator/"
+         xmlns:note="http://id.loc.gov/vocabulary/note/"
+         xmlns:xs="http://www.w3.org/2001/XMLSchema"
+         xmlns:abstract="http://id.loc.gov/vocabulary/abstract/"
+         xmlns:access="http://id.loc.gov/vocabulary/access/"
+         xmlns:fo="http://www.w3.org/1999/XSL/Format"
+         xmlns:class="http://id.loc.gov/vocabulary/class/"
+         xmlns:fn="http://www.w3.org/2005/xpath-functions"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:mods="http://www.loc.gov/mods/v3"
+         xmlns:ri="http://id.loc.gov/ontologies/RecordInfo#"
+         xmlns:modsrdf="http://www.loc.gov/mods/rdf/v1#"
+         xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#"><!--
+
+This RDF description created by the stylesheet at http://www.loc.gov/standards/mods/modsrdf/modsrdf.xsl 
+
+--><!--
+*******************************************************
+   Top level element
+*******************************************************
+--><modsrdf:ModsResource rdf:about="http://www.loc.gov/mods/rdf/v1#MODS123456">
+
+<!--
+	
+*******************************************************
+   rdf:type  statement for each resource type
+*******************************************************
+-->
+<rdf:type rdf:resource="http://id.loc.gov/vocabulary/resourceType#Text"/>
+      <!--
+	*******************************************************
+  names
+*******************************************************
+--><!--
+			** Name **			
+			-->
+<name xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <PersonalName xmlns="http://www.loc.gov/mads/rdf/v1#" rdf:about="d1e9">
+            <label xmlns="http://www.w3.org/2000/01/rdf-schema#">  David A.  Schneider    </label>
+            <elementList rdf:parseType="Collection">
+               <FamilyNameElement>
+                  <elementValue>Schneider</elementValue>
+               </FamilyNameElement>
+               <GivenNameElement>
+                  <elementValue>David A.</elementValue>
+               </GivenNameElement>
+            </elementList>
+         </PersonalName>
+      </name>
+      <!--
+**** Roles for this name.
+-->
+<modsrdf:roleRelationship>
+         <modsrdf:RoleRelationship>
+            <modsrdf:roleRelationshipRole>author</modsrdf:roleRelationshipRole>
+            <modsrdf:roleRelationshipName rdf:resource="d1e9"/>
+         </modsrdf:RoleRelationship>
+      </modsrdf:roleRelationship>
+      <!--
+			** Name **			
+			-->
+<name xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <PersonalName xmlns="http://www.loc.gov/mads/rdf/v1#" rdf:about="d1e24">
+            <label xmlns="http://www.w3.org/2000/01/rdf-schema#">  Dennis V.  Kent    </label>
+            <elementList rdf:parseType="Collection">
+               <FamilyNameElement>
+                  <elementValue>Kent</elementValue>
+               </FamilyNameElement>
+               <GivenNameElement>
+                  <elementValue>Dennis V.</elementValue>
+               </GivenNameElement>
+            </elementList>
+         </PersonalName>
+      </name>
+      <!--
+**** Roles for this name.
+-->
+<modsrdf:roleRelationship>
+         <modsrdf:RoleRelationship>
+            <modsrdf:roleRelationshipRole>author</modsrdf:roleRelationshipRole>
+            <modsrdf:roleRelationshipName rdf:resource="d1e24"/>
+         </modsrdf:RoleRelationship>
+      </modsrdf:roleRelationship>
+      <!--
+			** Name **			
+			-->
+<name xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <PersonalName xmlns="http://www.loc.gov/mads/rdf/v1#" rdf:about="d1e42">
+            <label xmlns="http://www.w3.org/2000/01/rdf-schema#">  Gilberto A.  Mello    </label>
+            <elementList rdf:parseType="Collection">
+               <FamilyNameElement>
+                  <elementValue>Mello</elementValue>
+               </FamilyNameElement>
+               <GivenNameElement>
+                  <elementValue>Gilberto A.</elementValue>
+               </GivenNameElement>
+            </elementList>
+         </PersonalName>
+      </name>
+      <!--
+**** Roles for this name.
+-->
+<modsrdf:roleRelationship>
+         <modsrdf:RoleRelationship>
+            <modsrdf:roleRelationshipRole>author</modsrdf:roleRelationshipRole>
+            <modsrdf:roleRelationshipName rdf:resource="d1e42"/>
+         </modsrdf:RoleRelationship>
+      </modsrdf:roleRelationship>
+      <!--
+			** Name **			
+			-->
+<name xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <CorporateName xmlns="http://www.loc.gov/mads/rdf/v1#" rdf:about="d1e60">
+            <label xmlns="http://www.w3.org/2000/01/rdf-schema#">Columbia University. Lamont-Doherty Earth Observatory</label>
+            <elementList rdf:parseType="Collection">
+               <FullNameElement>
+                  <elementValue>Columbia University. Lamont-Doherty Earth Observatory</elementValue>
+               </FullNameElement>
+            </elementList>
+         </CorporateName>
+      </name>
+      <!--
+**** Roles for this name.
+-->
+<modsrdf:roleRelationship>
+         <modsrdf:RoleRelationship>
+            <modsrdf:roleRelationshipRole>originator</modsrdf:roleRelationshipRole>
+            <modsrdf:roleRelationshipName rdf:resource="d1e60"/>
+         </modsrdf:RoleRelationship>
+      </modsrdf:roleRelationship>
+      <!--
+	
+*******************************************************
+  titles
+*******************************************************
+--><!--
+		
+*******  Principal Title
+--><titlePrincipal xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <Title xmlns="http://www.loc.gov/mads/rdf/v1#">
+            <label xmlns="http://www.w3.org/2000/01/rdf-schema#">A detailed chronology of the Australasian impact event, the Brunhes-Matuyama geomagnetic polarity reversal, and global climate change</label>
+            <elementList rdf:parseType="Collection">
+
+               <mainTitleElement>
+                  <elementValue>A detailed chronology of the Australasian impact event, the Brunhes-Matuyama geomagnetic polarity reversal, and global climate change</elementValue>
+               </mainTitleElement>
+            </elementList>
+         </Title>
+      </titlePrincipal>
+      <!--
+
+***************************
+identifier(s)
+***************************
+-->
+<identifier:hdl>http://hdl.handle.net/10022/AC:P:11905</identifier:hdl>
+      <!--
+
+***************************
+subject(s)
+***************************
+--><subjectComplex xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <ComplexSubject xmlns="http://www.loc.gov/mads/rdf/v1#">
+            <rdfs:label>Geophysics. </rdfs:label>
+            <componentList rdf:parseType="Collection">
+
+               <Topic>
+                  <label xmlns="http://www.w3.org/2000/01/rdf-schema#">Geophysics</label>
+                  <elementList rdf:parseType="Collection">
+                     <TopicElement>
+                        <elementValue>Geophysics</elementValue>
+                     </TopicElement>
+                  </elementList>
+
+               </Topic>
+            </componentList>
+         </ComplexSubject>
+      </subjectComplex>
+      <!--
+
+***************************
+genre(s)
+***************************
+--><!--
+		
+*******genre
+--><modsrdf:genre>
+         <GenreForm xmlns="http://www.loc.gov/mads/rdf/v1#">
+            <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
+            <rdfs:label>Articles</rdfs:label>
+            <elementList rdf:parseType="Collection">
+               <GenreFormElement>
+                  <elementValue>Articles</elementValue>
+               </GenreFormElement>
+            </elementList>
+         </GenreForm>
+      </modsrdf:genre>
+
+
+      <!--
+	
+*************************
+simple elements 
+*************************
+-->
+
+<!--**********abstract-->
+<abstract xmlns="http://www.loc.gov/mods/rdf/v1#">A mechanism had been recently proposed to show how an impact event can trigger a geomagnetic polarity reversal by means of rapid climate cooling. We test the proposed mechanism by examining the record from two high sedimentation rate (8â€“11 cm/kyr) deep-sea sediment cores (ODP Sites 767 and 769) from marginal seas of the Indonesian archipelago, which record the Australasian impact with well-defined microtektite layers, the Brunhes-Matuyama polarity reversal with strong and stable remanent magnetizations, and global climate with oxygen isotope variations in planktonic foraminifera. Both ODP cores show the impact to have preceded the reversal of magnetic field directions by about 12 kyr. Both records indicate that the field intensity was increasing near the time of impact and that it continued to increase for about 4 kyr afterwards. Furthermore, the oxygen isotope record available from sediments at ODP Site 769 shows no indication of discernible climate cooling following the impact: the microtektite event occurred in the later part of glacial Stage 20 and was followed by a smooth warming trend to interglacial Stage 19. Thus the detailed chronology does not support the previously proposed model which would predict that a decrease in geomagnetic field intensity resulted from a minor glaciation following the impact event. We conclude that the evidence for a causal link between impacts and geomagnetic reversals remains insufficient to demonstrate a physical connection.</abstract>
+
+      <!--
+	
+*************************
+other elements 
+*************************
+-->
+<!--
+		
+*******language
+-->
+<LanguageOfResource xmlns="http://www.loc.gov/mods/rdf/v1#">English</LanguageOfResource>
+      <!--
+		
+***************location
+--><locationOfResource xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <Location>
+            <locationPhysicalLocation>NNC</locationPhysicalLocation>
+         </Location>
+      </locationOfResource>
+
+      <resourceDateIssued xmlns="http://www.loc.gov/mods/rdf/v1#" rdf:datatype="xsd:date">1992</resourceDateIssued>
+
+
+      <!--
+					
+********************************  administrative metadata follows  *****************************************		
+		
+				-->
+<administrativeMedatata xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <AdministrativeMedatata xmlns="http://id.loc.gov/ontologies/RecordInfo#">
+            <recordContentSource>NNC</recordContentSource>
+            <recordInfoRecordCreationDate rdf:datatype="xsd:date">2011-12-06 10:27:50 -0500</recordInfoRecordCreationDate>
+            <recordInfoRecordChangeDate rdf:datatype="xsd:date">2012-08-01 14:40:32 -0400</recordInfoRecordChangeDate>
+            <recordIdentifier>5890</recordIdentifier>
+            <languageOfCataloging>eng</languageOfCataloging>
+         </AdministrativeMedatata>
+      </administrativeMedatata>
+
+      <!--
+					
+				
+********************************  relatedItems follow *****************************************				
+				--><!--
+**************relatedItem****************
+--><relatedHost>
+<!--
+*******************************************************
+   Top level element
+*******************************************************
+--><modsrdf:ModsResource rdf:about="http://www.loc.gov/mods/rdf/v1#MODS123456">
+<!--
+	
+*******************************************************
+  titles
+*******************************************************
+--><!--
+		
+*******  Principal Title
+--><titlePrincipal xmlns="http://www.loc.gov/mods/rdf/v1#">
+               <Title xmlns="http://www.loc.gov/mads/rdf/v1#">
+                  <label xmlns="http://www.w3.org/2000/01/rdf-schema#">Earth and Planetary Science Letters</label>
+                  <elementList rdf:parseType="Collection">
+
+                     <mainTitleElement>
+                        <elementValue>Earth and Planetary Science Letters</elementValue>
+                     </mainTitleElement>
+                  </elementList>
+               </Title>
+            </titlePrincipal>
+            <!--
+
+***************************
+identifier(s)
+***************************
+-->
+<identifier:doi>http://dx.doi.org/10.1016/0012-821X(92)90192-X</identifier:doi>
+
+            <!--
+	
+*************************
+other elements 
+*************************
+-->
+<!--
+		
+*******part
+-->
+<part xmlns="http://www.loc.gov/mods/rdf/v1#">
+               <Part>
+                  <partUnit>page</partUnit>
+                  <partDetailType>volume issue</partDetailType>
+                  <partNumber>111</partNumber>
+                  <partNumber>2-4</partNumber>
+                  <partStart>395</partStart>
+                  <partEnd>405</partEnd>
+                  <partDate rdf:datatype="xsd:string">1992-07</partDate>
+               </Part>
+            </part>
+            <!--
+**************************************************************
+--></modsrdf:ModsResource>
+      </relatedHost>
+
+      <!--
+**************************************************************
+--></modsrdf:ModsResource>
+</rdf:RDF>
