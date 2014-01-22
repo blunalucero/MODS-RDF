@@ -1,0 +1,41 @@
+MODSRDF Brief Discussion Paper
+Principal Name,  Principal title, and Name/Title
+Ray Denenberg, Library of Congress
+December 13, 2013
+
+
+LC MODSRDF introduces these three concepts that are not explicitly defined in MODS XML: “principal name”, “principal title,” and “Name/Title”.
+
+Principal Name
+The concept of “principal name” exists to support the concept of name/title (see below): if there is a principal name, then we construct a name/title; if not, we don’t. A MODS XML record need not have a principal name and should have no more than one. 
+So, how do we determine if there is a principal name, and, when there are several names in a record, which one is  principal?   First of all, there is an attribute @primary for <name>  (i.e.   <mods:name  primary=”yes”>).   If a name includes @primary, then it is the principal name.   (At most one <name> can include @primary.)
+However, @primary was introduced in a late version and most MODS records do not have it.   So in the absence of a <name> with @ primary, determination of a principal name is based on the existence of a name with role ‘creator’, as follows:
+If no name has been designated ”primary”:
+•	then if there is exactly one name whose role is "creator", than that name is the principal name. 
+•	if there is no name whose role is "creator", or more than one, then there is no principal name. 
+
+Principal Title
+The concept of a principal title is simply to distinguish it from a uniform title.  A principle title is one  where <titleInfo> has no @type attribute.   A uniform title is one where @type = “uniform”.   A mods record may have one or the other or both, but should not have more than one of either.  (And if there is a principal title, then there may also be ‘abbreviated’, ‘translated’, and ‘alternative’ titles, and any number of these, however, there should be none of these if there is no principal title, because an abbreviated/translated/alternative title is meant to be an abbreviation/translation/alternative of the principle title.)
+
+Name/Title
+If there is a uniform title, and if there is a principal name, then a name/title is constructed from the two.  If there is not both, then no name/title is constructed. 
+Look at the MODS XML record for Hamlet, at http://www.loc.gov/standards/mods/modsrdf/examples/0009.xml 
+
+And the corresponding MODS RDF description: http://www.loc.gov/standards/mods/modsrdf/examples/0009.rdf  
+
+Where the principal name: Shakespeare, William
+And the Uniform title: Shakespeare, William -- Hamlet
+Have been combined into a name/title: Shakespeare, William -- Hamlet
+
+
+Purpose of this paper
+It is not at all clear that all or any of these concepts – principle name, principal title, name/title – need be retained in the new MODS RDF ontology currently being developed.   They may be meaningful and useful, but if they are not then they should not be retained, because they do introduce significant complexity. 
+
+The purpose of this discussion paper  is to explain how they are used in the LC MODS RDF ontology, as a basis for further discussion of their usefulness. 
+
+
+
+
+
+
+
