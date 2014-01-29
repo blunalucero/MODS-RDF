@@ -1,0 +1,153 @@
+
+MODS RDF Ontology: Authorities
+Ray Denenberg, Library of Congress
+November 6, 2013
+
+Background
+The November 4 paper: Development of a MODS RDF Ontology - Discussion Points,
+raised several suggested issues for initial discussion among the Columbia MODS Ontology Working Group.  
+One issue discussed in that paper was Authorities, which was only briefly discussed, with a promise to treat it in more detail in a separate paper/
+This paper focuses on Authorities.  It presents some possible approaches to Authorities that the MODS RDF Ontology may consider, including the BIBFRAME approach as well as that taken by the LC MODS RDF Ontology.
+
+Contents
+1	Introduction	2
+2	Example Used in this Document	2
+3	The BIBFRAME Abstraction Layer	3
+4	Direct Approach	3
+5	LC MODSRDF Approach: Inline	4
+6	Adapting Inline to the Abstraction Layer	4
+7	Stub Abstraction Layer	5
+
+
+
+ 
+1	Introduction
+Personal, organization, and place names, and topics, are some examples of resources that will need to be represented as Authorities in the MODS RDF ontology.  That doesn’t mean that wherever there is a personal name it must be represented (inline or via link) in some authorized form (VIAF, MADSRDF, etc).  Sometimes there will be a need to do so; other times a cataloger or system might choose not to or have no means to do so. 
+This paper proposes that a general framework be developed into which the various forms and levels of description can fit. BIBFRAME takes this approach;  it defines what it calls a BIBFRAME Authority. The BIBFRAME approach is examined in this paper. 
+MODS RDF might choose the BIBFRAME approach, a similar approach, or a different approach altogether.  In any case this paper uses the term MODSRDF Authority to refer to a hypothetical framework yet to be developed for representing names, etc. 
+Like the BIBFRAME Authority, a MODSRDF Authority would not be a “real” Authority that libraries are familiar with – it would not prescribe a specific method of constructing an authorized form – it should be thought of as a framework to represent resources that are normally represented in authorized forms. 
+2	Example Used in this Document
+We use the following example in the approaches discussed in this paper. 
+The example is based on the MODS record for “Letters to Emma Lazarus in the Columbia University Library”, which can be retrieved at:
+http://lx2.loc.gov:210/LCDB?operation=searchRetrieve&version=1.1&query=bath.lccn=39014112&maximumRecords=1&recordSchema=mods   
+The name of the creator is given by MODS name: 
+	<name type="personal">
+		<namePart>Rusk, Ralph L. (Ralph Leslie)</namePart>
+		<namePart type="date">1888-</namePart>
+		<role>
+	   	    <roleTerm authority="marcrelator" type="text">creator</roleTerm>
+		</role>
+	</name>
+There is an authority record for the creator at LC:
+http://id.loc.gov/authorities/names/n88241008.rdf
+And a different authority record at VIAF:
+http://viaf.org/viaf/110836743/rdf 
+3	The BIBFRAME Abstraction Layer
+Call it the Indirect Approach, Abstraction Layer, Lightweight Wrapper, or BIBFRAME Authority, the general authority framework that BIBFRAME seems to be adopting is illustrated in the following RDF description.
+
+
+<bf:Work rdf:about = "http://bibframe/work/xyz">
+     <bf:title> Letters to Emma Lazarus in the Columbia University Library </bf:title>
+     <bf:creator  rdf:resource = "http://bibframe/authority/person/rusk"/>
+</bf:Work>
+
+<!--  BIBFRAME Authority -->
+<bf:Creator rdf:about="http://bibframe/authority/person/rusk">
+<rdf:type rdf:resource="http://bibframe.org/vocab/Person"/>         <bf:authorizedAccessPoint>Rusk, Ralph L. (Ralph Leslie) 1888-
+                                           </bf:authorizedAccessPoint>
+     <bf:hasLcAuthority rdf:resource="http://id.loc.gov/authorities/names/n88241008.rdf"/>
+     <bf:hasViafAuthority rdf:resource="http://viaf.org/viaf/110836743/rdf"/>
+</bf:Creator>
+
+To be clear, it is the latter part of the above that is the BIBFRAME Authority.
+
+<!--  BIBFRAME Authority -->
+<bf:Creator  id=" http://bibframe/authority/person/rusk">
+<rdf:type rdf:resource="http://bibframe.org/vocab/Person"/>    
+     <bf:authorizedAccessPoint>Rusk, Ralph L. (Ralph Leslie) 1888-</ bf:authorizedAccessPoint>
+     <hasLcAuthority resource="http://id.loc.gov/authorities/names/n88241008.rdf"/>
+     <hasViafAuthority resource="http://viaf.org/viaf/110836743/rdf"/>
+</bf:Creator>
+It declares bf:Creator to be of type bf:Person.  (http://bibframe.org/vocab/ is the BIBFRAME Namespace URI.)  And bf:Person is a subclass of bf:Authority.
+This example includes links to LC and VIAF authorities, but any authority links can be included, and any number of them. 
+4	Direct Approach
+The above is sometimes referred to as the “Indirect Approach”, in contrast to the Direct Approach described here.  This is sometimes referred to it as the Ideal Approach, “ideal” because it is the most linked-data friendly. Nevertheless it has been rejected by BIBFRAME for lack of flexibility.
+With the Direct Approach, the Authority is very simply expressed in RDF/XML as:
+
+<bf:creator       rdf:resource=”http://id.loc.gov/authorities/names/n88241008.rdf”/>
+
+Or:
+
+<bf:creator       rdf:resource=” http://viaf.org/viaf/110836743/rdf”/>
+
+Etc.
+In any case the creator is identified by the URI of a traditional, library-type authority. This approach does not define or utilize an authority framework.
+5	LC MODSRDF Approach: Inline
+The LC MODSRDF approach is to use MADS RDF inline.  There is no provision to use the direct approach, and there is no Authority framework defined.  The MODS name (in the example, section 2) might be expressed in LC MODSRDF like this:
+
+<modsrdf:name>
+	<madsrdf:PersonalName>
+	    <madsrdf:label>Rusk, Ralph L. (Ralph Leslie) 1888- </madsrdf:label>
+                     <madsrdf:elementList rdf:parseType="Collection">
+		<madsrdf:FullNameElement>
+			<madsrdf:elementValue>Rusk, Ralph L. (Ralph Leslie) </madsrdf:elementValue>
+		</madsrdf:FullNameElement>
+		<madsrdf:DateNameElement>
+			<madsrdf:elementValue>1888-</madsrdf:elementValue>
+		</madsrdf:DateNameElement>
+	</madsrdf:elementList>
+          </madsrdf:PersonalName>
+</modsrdf:name>
+
+Lines in blue (i.e. wrapped by modsrdf:name) represent the MADS RDF ontology representation of the name.  Representing the name in this manner is not meant to imply that there exists a matching MADS RDF authority record. 
+This approach is NOT recommended for the new MODS RDF.
+6	Adapting Inline to the Abstraction Layer 
+
+Although the LC MODS RDF approach just described is not recommended, a small change would adapt it to an abstraction layer approach similar to that of BIBFRAME.
+
+
+
+
+          <modsrdf:personalName     rdf:resource = "http://modsrdf/tempAuthority/person/rusk" />
+
+<!--  MODSRDF Authority -->
+<modsrdf:PersonalName  rdf:about=""http://modsrdf/authority/person/rusk">
+    <rdf:type rdf:resource="http://modsrdf/vocab/Authority"/>    
+    <modsrdf:label>Rusk, Ralph L. (Ralph Leslie) 1888- </modsrdf:label>
+    <madsrdf:label>Rusk, Ralph L. (Ralph Leslie)  1888- </madsrdf:label>
+    <madsrdf:elementList rdf:parseType="Collection">
+	<madsrdf:FullNameElement>
+		<madsrdf:elementValue>Rusk, Ralph L. (Ralph Leslie) </madsrdf:elementValue>
+	</madsrdf:FullNameElement>
+	<madsrdf:DateNameElement>
+		<madsrdf:elementValue>1888-</madsrdf:elementValue>
+	</madsrdf:DateNameElement>
+     </madsrdf:elementList>
+</modsrdf:PersonalName>
+As above, lines in blue represent the MADS RDF ontology representation of the name.  And similarly, representing the name in this manner is not meant to imply that there exists a matching MADS RDF authority record. 
+Note the redundant labels, one each in the modsrdf and madsrdf namespace.  The modsrdf label is there for the benefit of the consumer who is unable to process madsrdf.  
+This approach by no means requires MADS RDF.  Any appropriate authority ontology may be used.  For example (extracted from the VIAF authority record):
+          <modsrdf:personalName     rdf:resource = "http://modsrdf/tempAuthority/person/rusk" />
+
+<!--  MODSRDF Authority -->
+<modsrdf:PersonalName  rdf:about=""http://modsrdf/authority/person/rusk">
+    <rdf:type rdf:resource="http://modsrdf/vocab/Authority"/>    
+    <modsrdf:label>Rusk, Ralph L. (Ralph Leslie) 1888- </modsrdf:label>
+<foaf:name>Rusk, Ralph L. (Ralph Leslie), 1888-</foaf:name>
+<foaf:name>Rusk, Ralph Leslie, 1888-19..?</foaf:name>
+<foaf:name>Rusk, Ralph Leslie, 1888-1962</foaf:name>
+<rdaGr2:dateOfBirth>1888</rdaGr2:dateOfBirth>
+<rdaGr2:dateOfDeath>1962</rdaGr2:dateOfDeath>
+</modsrdf:PersonalName>
+7	Stub Abstraction Layer
+What if the cataloger knows the name, but for whatever reason, cannot express it in any authority ontology. The following example is the same as the above two, without any of the MADS or VIAF RDF.
+
+          <modsrdf:personalName     rdf:resource = "http://modsrdf/tempAuthority/person/rusk" />
+
+<!--  BIBFRAME Authority -->
+<modsrdf:PersonalName  rdf:about=""http://modsrdf/authority/person/rusk">
+    <rdf:type rdf:resource="http://modsrdf/vocab/Authority"/>    
+    <modsrdf:label>Rusk, Ralph L. (Ralph Leslie) 1888- </modsrdf:label>
+</modsrdf:PersonalName>
+
+In order to consider this an authority you have to bend the traditional definition of authority, and that is what this paper proposes, for a MODSRDF authority.
