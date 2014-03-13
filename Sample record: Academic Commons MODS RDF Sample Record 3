@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:identifier="http://id.loc.gov/vocabulary/identifier/"
+         xmlns:relator="http://id.loc.gov/vocabulary/relator/"
+         xmlns:note="http://id.loc.gov/vocabulary/note/"
+         xmlns:xs="http://www.w3.org/2001/XMLSchema"
+         xmlns:abstract="http://id.loc.gov/vocabulary/abstract/"
+         xmlns:access="http://id.loc.gov/vocabulary/access/"
+         xmlns:fo="http://www.w3.org/1999/XSL/Format"
+         xmlns:class="http://id.loc.gov/vocabulary/class/"
+         xmlns:fn="http://www.w3.org/2005/xpath-functions"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:mods="http://www.loc.gov/mods/v3"
+         xmlns:ri="http://id.loc.gov/ontologies/RecordInfo#"
+         xmlns:modsrdf="http://www.loc.gov/mods/rdf/v1#"
+         xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#"><!--
+
+This RDF description created by the stylesheet at http://www.loc.gov/standards/mods/modsrdf/modsrdf.xsl 
+
+--><!--
+*******************************************************
+   Top level element
+*******************************************************
+--><modsrdf:ModsResource rdf:about="http://www.loc.gov/mods/rdf/v1#MODS123456">
+
+<!--
+	
+*******************************************************
+   rdf:type  statement for each resource type
+*******************************************************
+-->
+<rdf:type rdf:resource="http://id.loc.gov/vocabulary/resourceType#Text"/>
+      <!--
+	*******************************************************
+  names
+*******************************************************
+--><!--
+			** Name **			
+			-->
+<name xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <PersonalName xmlns="http://www.loc.gov/mads/rdf/v1#" rdf:about="d1e9">
+            <label xmlns="http://www.w3.org/2000/01/rdf-schema#">  Heather Tiana  Gould    </label>
+            <elementList rdf:parseType="Collection">
+               <FamilyNameElement>
+                  <elementValue>Gould</elementValue>
+               </FamilyNameElement>
+               <GivenNameElement>
+                  <elementValue>Heather Tiana</elementValue>
+               </GivenNameElement>
+            </elementList>
+         </PersonalName>
+      </name>
+      <!--
+**** Roles for this name.
+-->
+<modsrdf:roleRelationship>
+         <modsrdf:RoleRelationship>
+            <modsrdf:roleRelationshipRole>author</modsrdf:roleRelationshipRole>
+            <modsrdf:roleRelationshipName rdf:resource="d1e9"/>
+         </modsrdf:RoleRelationship>
+      </modsrdf:roleRelationship>
+      <!--
+			** Name **			
+			-->
+<name xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <PersonalName xmlns="http://www.loc.gov/mads/rdf/v1#" rdf:about="d1e27">
+            <label xmlns="http://www.w3.org/2000/01/rdf-schema#">  Bruce R.  Vogeli    </label>
+            <elementList rdf:parseType="Collection">
+               <FamilyNameElement>
+                  <elementValue>Vogeli</elementValue>
+               </FamilyNameElement>
+               <GivenNameElement>
+                  <elementValue>Bruce R.</elementValue>
+               </GivenNameElement>
+            </elementList>
+         </PersonalName>
+      </name>
+      <!--
+**** Roles for this name.
+-->
+<modsrdf:roleRelationship>
+         <modsrdf:RoleRelationship>
+            <modsrdf:roleRelationshipRole>thesis advisor</modsrdf:roleRelationshipRole>
+            <modsrdf:roleRelationshipName rdf:resource="d1e27"/>
+         </modsrdf:RoleRelationship>
+      </modsrdf:roleRelationship>
+      <!--
+			** Name **			
+			-->
+<name xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <CorporateName xmlns="http://www.loc.gov/mads/rdf/v1#" rdf:about="d1e45">
+            <label xmlns="http://www.w3.org/2000/01/rdf-schema#">Teachers College. Mathematics Education</label>
+            <elementList rdf:parseType="Collection">
+               <FullNameElement>
+                  <elementValue>Teachers College. Mathematics Education</elementValue>
+               </FullNameElement>
+            </elementList>
+         </CorporateName>
+      </name>
+      <!--
+**** Roles for this name.
+-->
+<modsrdf:roleRelationship>
+         <modsrdf:RoleRelationship>
+            <modsrdf:roleRelationshipRole>originator</modsrdf:roleRelationshipRole>
+            <modsrdf:roleRelationshipName rdf:resource="d1e45"/>
+         </modsrdf:RoleRelationship>
+      </modsrdf:roleRelationship>
+      <!--
+	
+*******************************************************
+  titles
+*******************************************************
+--><!--
+		
+*******  Principal Title
+--><titlePrincipal xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <Title xmlns="http://www.loc.gov/mads/rdf/v1#">
+            <label xmlns="http://www.w3.org/2000/01/rdf-schema#">Teachers' Conceptions of Mathematical Modeling</label>
+            <elementList rdf:parseType="Collection">
+
+               <mainTitleElement>
+                  <elementValue>Teachers' Conceptions of Mathematical Modeling</elementValue>
+               </mainTitleElement>
+            </elementList>
+         </Title>
+      </titlePrincipal>
+      <!--
+
+***************************
+identifier(s)
+***************************
+-->
+<identifier:hdl>http://hdl.handle.net/10022/AC:P:20442</identifier:hdl>
+      <!--
+
+***************************
+subject(s)
+***************************
+--><subjectComplex xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <ComplexSubject xmlns="http://www.loc.gov/mads/rdf/v1#">
+            <rdfs:label>Mathematics education. </rdfs:label>
+            <componentList rdf:parseType="Collection">
+
+               <Topic>
+                  <label xmlns="http://www.w3.org/2000/01/rdf-schema#">Mathematics education</label>
+                  <elementList rdf:parseType="Collection">
+                     <TopicElement>
+                        <elementValue>Mathematics education</elementValue>
+                     </TopicElement>
+                  </elementList>
+
+               </Topic>
+            </componentList>
+         </ComplexSubject>
+      </subjectComplex>
+      <!--
+
+***************************
+genre(s)
+***************************
+--><!--
+		
+*******genre
+--><modsrdf:genre>
+         <GenreForm xmlns="http://www.loc.gov/mads/rdf/v1#">
+            <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
+            <rdfs:label>Dissertations</rdfs:label>
+            <elementList rdf:parseType="Collection">
+               <GenreFormElement>
+                  <elementValue>Dissertations</elementValue>
+               </GenreFormElement>
+            </elementList>
+         </GenreForm>
+      </modsrdf:genre>
+
+
+      <!--
+	
+*************************
+simple elements 
+*************************
+-->
+
+<!--**********abstract-->
+<abstract xmlns="http://www.loc.gov/mods/rdf/v1#">The release of the Common Core State Standards for Mathematics in 2010 resulted in a new focus on mathematical modeling in United States curricula. Mathematical modeling represents a way of doing and understanding mathematics new to most teachers. The purpose of this study was to determine the conceptions and misconceptions held by teachers about mathematical models and modeling in order to aid in the development of teacher education and professional development programs. The study used a mixed methods approach. Quantitative data were collected through an online survey of a large sample of practicing and prospective secondary teachers of mathematics in the United States. The purpose of this was to gain an understanding of the conceptions held by the general population of United States secondary mathematics teachers. In particular, basic concepts of mathematical models, mathematical modeling, and mathematical modeling in education were analyzed. Qualitative data were obtained from case studies of a small group of mathematics teachers who had enrolled in professional development which had mathematical models or modeling as a focus. The purpose of these case studies was to give an illustrative view of teachers regarding modeling, as well as to gain some understanding of how participating in professional development affects teachers' conceptions. The data showed that US secondary mathematics teachers hold several misconceptions about models and modeling, particularly regarding aspects of the mathematical modeling process. Specifically, the majority of teachers do not understand that the mathematical modeling process always requires making choices and assumptions, and that mathematical modeling situations must come from real-world scenarios. A large minority of teachers have misconceptions about various other characteristics of mathematical models and the mathematical modeling process.</abstract>
+
+      <!--
+	
+*************************
+other elements 
+*************************
+-->
+<!--
+		
+*******language
+-->
+<LanguageOfResource xmlns="http://www.loc.gov/mods/rdf/v1#">English</LanguageOfResource>
+      <!--
+		
+***************location
+--><locationOfResource xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <Location>
+            <locationPhysicalLocation>NNC</locationPhysicalLocation>
+         </Location>
+      </locationOfResource>
+
+      <resourceDateIssued xmlns="http://www.loc.gov/mods/rdf/v1#" rdf:datatype="xsd:string">2013</resourceDateIssued>
+
+      <!--
+		
+*******typed note 
+-->
+<modsrdf:noteGroup>
+         <modsrdf:NoteGroup>
+            <modsrdf:noteGroupType/>
+            <modsrdf:noteGroupValue>Ph.D., Columbia University.</modsrdf:noteGroupValue>
+         </modsrdf:NoteGroup>
+      </modsrdf:noteGroup>
+
+
+      <!--
+					
+********************************  administrative metadata follows  *****************************************		
+		
+				-->
+<administrativeMedatata xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <AdministrativeMedatata xmlns="http://id.loc.gov/ontologies/RecordInfo#">
+            <recordContentSource>NNC</recordContentSource>
+            <recordInfoRecordCreationDate rdf:datatype="xsd:string">2013-05-23 13:17:41 -0400</recordInfoRecordCreationDate>
+            <recordInfoRecordChangeDate rdf:datatype="xsd:string">2013-05-23 13:21:10 -0400</recordInfoRecordChangeDate>
+            <recordIdentifier>11232</recordIdentifier>
+            <languageOfCataloging>eng</languageOfCataloging>
+         </AdministrativeMedatata>
+      </administrativeMedatata>
+      <!--
+**************************************************************
+--></modsrdf:ModsResource>
+</rdf:RDF>
