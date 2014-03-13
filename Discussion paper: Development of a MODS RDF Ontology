@@ -1,0 +1,203 @@
+
+Development of a MODS RDF Ontology
+Discussion Points
+Ray Denenberg, Library of Congress
+November 4, 2013
+
+Purpose and Background
+
+The purpose of this paper is to jumpstart discussion on the new modsrdf listserv.
+MODS RDF Ontology: Primer at http://www.loc.gov/standards/mods/modsrdf/primer.html describes a MODS RDF ontology developed at the Library of Congress. A current effort led by Columbia University is underway to develop a MODS RDF ontology.  Lessons learned in the development of the LC ontology can be used to help inform the Columbia work. 
+
+This paper raises several suggested issues for initial discussion among the Columbia working group, based on the LC experience. It is not complete, just a starting point - some issues have been omitted simply in the interest of time, in order to get the discussion moving forward; a follow-up paper may address omitted issues. In addition, a paper or two may be written that focuses and expounds on one or more of these issues, for example Authorities. 
+
+These issues are not raised with the intention of justifying the approach that LC took, or to try to influence the direction that the Columbia effort will take.  Undoubtedly in some cases the approach that LC took will be improved upon by the Columbia effort. In fact, for some of these issues the approach that BIBFRAME takes has improved on the LC approach (of course, MODS and BIBFRAME are much different ontologies, but they do have RDF issues in common) and this paper tries to consider these when possible.
+
+Contents
+
+1	Authorities
+2	Vocabulary Terms
+3	MODS Elements with ‘type’ Attributes
+4	Superfluous Wrappers
+5	MODS Titles
+6	Resource Type Classes
+
+1	Authorities
+
+In the LC MODS ontology, MODS XML elements <name>, <titleInfo>, <genre> and <subject>, as well as <originInfo><place> and <originInfo><publisher> are represented by properties whose ranges are  MADS classes, using the MADS ontology.
+
+Since then, BIBFRAME has had considerable discussion of how to represent these sort of resource. An alternative to the LC approach is the BIBFRAME, “lightweight abstraction layer”.
+
+ A separate paper will be issued shortly to expound on this area.
+
+2	Vocabulary Terms
+
+The LC ontology prescribes the use of vocabularies for various resource types, including roles, classification schemes, identifier types, resource types and languages.
+
+2.1	Object of a Triple as Vocabulary Term 
+
+The object of a triple might be from a known vocabulary.  An example is Language.  A known vocabulary for languages is http://id.loc.gov/vocabulary/iso639-2/ 
+ 
+The following XML:
+
+	<language>
+		<languageTerm authority="iso639-2b">fra</languageTerm>
+	</language>
+
+Results in the following RDF triple:
+
+ModsResource12356 languageOfResource <http://id.loc.gov/vocabulary/iso639-2/fra/>
+
+On the other hand if the language term is not from a known vocabulary it could be expressed as a literal:
+
+ModsResource12356 languageOfResource “french"
+
+Note that property languageOfResource applies whether expressing the language as a vocabulary term or literal. The current thinking in BIBFRAME is that these should be separate properties.  
+
+This should be explored by the Columbia group. It is important in cases where the description has a choice of supplying an RDF resource if one is available, but if not, can fall back on a literal. For example:
+
+
+ModsResource12356 languageOfResource <http://id.loc.gov/vocabulary/iso639-2/fra/>
+Vs.
+ModsResource12356 language “french”
+
+In this example two properties are created, languageOfResource, whose range is  RDF:Resource, and ‘language’, whose range is xs:string.  The BIBFRAME (current) view is that a single property should not be defined to allow objects that can be resources in some cases and literals in other cases. 
+
+2.2	Property Expressed as Vocabulary Term
+
+In the above example the vocabulary term is the object of a triple. Another case is where the property of a triple might be from a known vocabulary.  An example is MODS identifier type, that is, the value of the type attribute for <identifier>. 
+
+The following XML:
+
+<identifier type="isbn">0-937383-18-X</identifier>
+
+Might Result in the following RDF triple:
+
+ModsResource12356 identifier:isbn ‘0-937383-18-X’
+
+Where the prefix ‘identifier:’ identifies a vocabulary of identifier types, for example http://id.loc.gov/vocabulary/identifier/ 
+
+All of the vocabulary term URIs are declared subproperties of modsrdf:identifier.
+
+2.3	Role Expressed as Vocabulary Member 
+
+In the following XML:
+
+<name>
+<namePart>Ralph Cramden</namePart>
+		<role>
+			<roleTerm>cre</roleTerm>
+		</role>
+</name>
+
+The role ‘cre’ is supplied for the name. ‘cre’ is in the known vocabulary http://id.loc.gov/vocabulary/relator/ 
+
+So the role may be expressed in RDF as:
+
+<relator:cre rdf:resource="idroot159713128"/>
+
+In this example, didroot159713128 is a local identifier for the name, which has been expressed elsewhere within the RDF description. We will expound on this in a separate paper soon.
+
+3	MODS Elements with ‘type’ Attributes
+
+3.1	Note and their ‘type’s
+
+A MODS <note> might have a “type”, expressed by its ‘type’ attribute.  It is unclear (and debated) whether the note type is of much use, except for certain well-know types  - and even then, it isn’t clear which ones are important and which ones are not.  LC MODS RDF singles out only one particular type: “statement of responsibility”.  That isn’t to say that other types are not important, or even that “statement of responsibility” is most important.  But it is the only one that LC MODS singles out.  The Columbia group may want to consider other types to be distinguished. 
+
+So the XML:
+
+<note type="statement of responsibility">written by Hazel Bubblebath</note>
+
+Results in the following RDF triple.
+
+ModsResource12356 statementOfResponsibility “written by Hazel Bubblebath”
+
+So, for a given note type, for LC MODS RDF there are three possibilities:
+1.	Create a property for the note type, as in ‘statementOfResponsibility’
+2.	Ignore the note type.
+	Thus the XML
+	<note type="performers">
+	nne Baxter (Louise), Maria Perschy (Angela), Gustavo Rojo (Bill), Reginald Gilliam (Mr. Johnson), [Catherine Elliot?] (Aunt Sallie), Ben Tatar (waiter)
+	</note>
+
+	Would result in
+
+	ModsResource12356 note  
+						“Anne Baxter (Louise), Maria Perschy (Angela), Gustavo Rojo (Bill), Reginald Gilliam (Mr. Johnson), [Catherine Elliot?] (Aunt Sallie), Ben Tatar (waiter)”
+
+	i.e. the type is not reflected in the RDF.
+
+3.	Create a structure, so that the note and its type can be conveyed.
+
+The above would result in the following RDF XML
+
+<modsrdf:noteGroup>
+	<modsrdf:NoteGroup>
+		<modsrdf:noteGroupType> performers </modsrdf:noteGroupType>
+		 <modsrdf:noteGroupValue> 
+			Anne Baxter (Louise), Maria Perschy (Angela), Gustavo Rojo (Bill), Reginald Gilliam (Mr. Johnson), [Catherine Elliot?] (Aunt Sallie), Ben Tatar (waiter)
+ 		 </modsrdf:noteGroupValue>
+		</modsrdf:noteGroup>
+
+3.2	Other Type Attributes Ignored
+
+MODS elements <abstract>, <accessCondition>, <tableOfContents>, and  <targetAudience> are similar to <note> in that they also have a type attribute, and type values for these elements don’t seem very useful.  The LC MODS RDF ontology simply ignores the type attribute for these elements. 
+
+Thus, the XML:
+
+<summary type="based on"> based on a novel by a man named Lear</note>
+
+Results in the following RDF triple.
+
+ModsResource12356 abstract “based on a novel by a man named Lear”
+
+3.3	Enumerated Types
+
+<titleInfo> and <relatedItem> are MODS elements where the type attribute has enumerated values, with meaningful semantics, that must be reflected in the RDF. For these elements, distinct properties have been defined for each enumerated type value.
+
+For example,
+ <titleInfo type="uniform”> becomes RDF property titleUniform.
+ <relatedItem type="host”> becomes RDF property  relatedHost.
+
+3.4	Subjects
+
+MODS <subject> does not have a type attribute but its child element is the functional equivalent of a type (for example, <subject><name> can be thought of as functionally equivalent to <subject type=”name”>.  Therefore subjects are included in this discussion of type.
+
+  All subject “types” – topic, geographic, temporal, titleInfo, etc – correspond to property subjectTopic with an object that reflects the type. 
+
+For example, <subject><topic> corresponds to property subjectTopic where the object is of type madsrdf:Topic.
+
+4	Superfluous Wrappers
+
+In some cases MODS XML groups similar elements together with a wrapper element, not necessarily because their values need to be bound in order to separate them from other bindings,  but rather to avoid a proliferation of top-level elements.  LC MODS RDF eliminates this extra level of structure where appropriate. 
+
+<originInfo> is a top level element that binds together a number of elements describing the origination of the object described, including place of publication, publisher, date of creation, etc.   Some argue that <originInfo> can be repeated – that there can be more than one set of origination descriptors.   However, LC MODS RDF takes the position that that case is rare enough that it need not be represented; so it represents the individual elements as direct properties of the described resource.   
+
+MODS <physicalDescription> is another element that wraps a number MODS description elements that are similar but really don’t need to be bound together, and so MODS RDF eliminates the wrapper and represents the individual elements as direct properties of the described resource. 
+
+5	MODS Titles
+
+LC MODS RDF has developed heuristics to designate a type for any title (supplied via MODS element <titleInfo>).  For most cases it is straightforward, based directly on the <titleInfo> type attribute; for example if type=”uniform” it is a uniform title.  However, MODS RDF introduces two new title types not based (entirely) on the <titleInfo> type attribute, the “primary title” and the “nameTitle” combination. This will be expounded upon in a later paper. 
+
+6	Resource Type Classes
+
+The MODS XML element <typeOfResource>  is a value from an enumerated list, including ‘text’, ‘cartographic’, ‘notated music’. Etc.  
+
+This can be reflected in an RDF ontology in one of two ways, by class or by property.
+
+	•	Class.
+	Define a class for each resource type.  The object described becomes a  member of the class.  Thus 
+              <typeOfResource>text</typeOfResource>
+	is expressed as :
+             ModsResourceXYZ rdf:type http://id.loc.gov/vocabulary/resourceTypes/Txt   
+
+	•	Property
+	Define a property for each resource type.  Thus 
+              <typeOfResource>text</typeOfResource>
+	is expressed as :
+             ModsResourceXYZ   resourceType  “text”
+
+LC MODS RDF chose the first approach: to represent resource types as classes.
+
+
+
