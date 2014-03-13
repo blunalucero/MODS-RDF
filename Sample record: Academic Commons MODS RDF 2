@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:identifier="http://id.loc.gov/vocabulary/identifier/"
+         xmlns:relator="http://id.loc.gov/vocabulary/relator/"
+         xmlns:note="http://id.loc.gov/vocabulary/note/"
+         xmlns:xs="http://www.w3.org/2001/XMLSchema"
+         xmlns:abstract="http://id.loc.gov/vocabulary/abstract/"
+         xmlns:access="http://id.loc.gov/vocabulary/access/"
+         xmlns:fo="http://www.w3.org/1999/XSL/Format"
+         xmlns:class="http://id.loc.gov/vocabulary/class/"
+         xmlns:fn="http://www.w3.org/2005/xpath-functions"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:mods="http://www.loc.gov/mods/v3"
+         xmlns:ri="http://id.loc.gov/ontologies/RecordInfo#"
+         xmlns:modsrdf="http://www.loc.gov/mods/rdf/v1#"
+         xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#"><!--
+
+This RDF description created by the stylesheet at http://www.loc.gov/standards/mods/modsrdf/modsrdf.xsl 
+
+--><!--
+*******************************************************
+   Top level element
+*******************************************************
+--><modsrdf:ModsResource rdf:about="http://www.loc.gov/mods/rdf/v1#MODS123456">
+
+<!--
+	
+*******************************************************
+   rdf:type  statement for each resource type
+*******************************************************
+-->
+<rdf:type rdf:resource="http://id.loc.gov/vocabulary/resourceType#MovingImage"/>
+      <!--
+	*******************************************************
+  names
+*******************************************************
+--><!--
+			** Name **			
+			-->
+<name xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <PersonalName xmlns="http://www.loc.gov/mads/rdf/v1#" rdf:about="d1e9">
+            <label xmlns="http://www.w3.org/2000/01/rdf-schema#">  Omar A.  Haroun    </label>
+            <elementList rdf:parseType="Collection">
+               <FamilyNameElement>
+                  <elementValue>Haroun</elementValue>
+               </FamilyNameElement>
+               <GivenNameElement>
+                  <elementValue>Omar A.</elementValue>
+               </GivenNameElement>
+            </elementList>
+         </PersonalName>
+      </name>
+      <!--
+**** Roles for this name.
+-->
+<modsrdf:roleRelationship>
+         <modsrdf:RoleRelationship>
+            <modsrdf:roleRelationshipRole>speaker</modsrdf:roleRelationshipRole>
+            <modsrdf:roleRelationshipName rdf:resource="d1e9"/>
+         </modsrdf:RoleRelationship>
+      </modsrdf:roleRelationship>
+      <!--
+			** Name **			
+			-->
+<name xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <CorporateName xmlns="http://www.loc.gov/mads/rdf/v1#" rdf:about="d1e27">
+            <label xmlns="http://www.w3.org/2000/01/rdf-schema#">Columbia University. Engineering and Applied Science</label>
+            <elementList rdf:parseType="Collection">
+               <FullNameElement>
+                  <elementValue>Columbia University. Engineering and Applied Science</elementValue>
+               </FullNameElement>
+            </elementList>
+         </CorporateName>
+      </name>
+      <!--
+**** Roles for this name.
+-->
+<modsrdf:roleRelationship>
+         <modsrdf:RoleRelationship>
+            <modsrdf:roleRelationshipRole>originator</modsrdf:roleRelationshipRole>
+            <modsrdf:roleRelationshipName rdf:resource="d1e27"/>
+         </modsrdf:RoleRelationship>
+      </modsrdf:roleRelationship>
+      <!--
+	
+*******************************************************
+  titles
+*******************************************************
+--><!--
+		
+*******  Principal Title
+--><titlePrincipal xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <Title xmlns="http://www.loc.gov/mads/rdf/v1#">
+            <label xmlns="http://www.w3.org/2000/01/rdf-schema#">Are MBA's Persons?</label>
+            <elementList rdf:parseType="Collection">
+
+               <mainTitleElement>
+                  <elementValue>Are MBA's Persons?</elementValue>
+               </mainTitleElement>
+            </elementList>
+         </Title>
+      </titlePrincipal>
+      <!--
+
+***************************
+identifier(s)
+***************************
+-->
+<identifier:hdl>http://hdl.handle.net/10022/AC:P:12582</identifier:hdl>
+      <!--
+
+***************************
+subject(s)
+***************************
+--><subjectComplex xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <ComplexSubject xmlns="http://www.loc.gov/mads/rdf/v1#">
+            <rdfs:label>Business education. </rdfs:label>
+            <componentList rdf:parseType="Collection">
+
+               <Topic>
+                  <label xmlns="http://www.w3.org/2000/01/rdf-schema#">Business education</label>
+                  <elementList rdf:parseType="Collection">
+                     <TopicElement>
+                        <elementValue>Business education</elementValue>
+                     </TopicElement>
+                  </elementList>
+
+               </Topic>
+            </componentList>
+         </ComplexSubject>
+      </subjectComplex>
+      <!--
+
+***************************
+genre(s)
+***************************
+--><!--
+		
+*******genre
+--><modsrdf:genre>
+         <GenreForm xmlns="http://www.loc.gov/mads/rdf/v1#">
+            <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
+            <rdfs:label>Presentations</rdfs:label>
+            <elementList rdf:parseType="Collection">
+               <GenreFormElement>
+                  <elementValue>Presentations</elementValue>
+               </GenreFormElement>
+            </elementList>
+         </GenreForm>
+      </modsrdf:genre>
+
+
+      <!--
+	
+*************************
+other elements 
+*************************
+-->
+<!--
+		
+*******language
+-->
+<LanguageOfResource xmlns="http://www.loc.gov/mods/rdf/v1#">English</LanguageOfResource>
+      <!--
+		
+***************location
+--><locationOfResource xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <Location>
+            <locationPhysicalLocation>NNC</locationPhysicalLocation>
+         </Location>
+      </locationOfResource>
+
+      <resourceDateIssued xmlns="http://www.loc.gov/mods/rdf/v1#" rdf:datatype="xsd:date">2011</resourceDateIssued>
+
+      <!--
+		
+*******typed note 
+-->
+<modsrdf:noteGroup>
+         <modsrdf:NoteGroup>
+            <modsrdf:noteGroupType/>
+            <modsrdf:noteGroupValue>Columbia Engineering TEDx event, "Innovating Social Change," Columbia University, November 29, 2011.</modsrdf:noteGroupValue>
+         </modsrdf:NoteGroup>
+      </modsrdf:noteGroup>
+
+
+      <!--
+					
+********************************  administrative metadata follows  *****************************************		
+		
+				-->
+<administrativeMedatata xmlns="http://www.loc.gov/mods/rdf/v1#">
+         <AdministrativeMedatata xmlns="http://id.loc.gov/ontologies/RecordInfo#">
+            <recordContentSource>NNC</recordContentSource>
+            <recordInfoRecordCreationDate rdf:datatype="xsd:date">2012-02-16 16:00:05 -0500</recordInfoRecordCreationDate>
+            <recordInfoRecordChangeDate rdf:datatype="xsd:date">2012-05-25 22:28:45 -0400</recordInfoRecordChangeDate>
+            <recordIdentifier>6587</recordIdentifier>
+            <languageOfCataloging>eng</languageOfCataloging>
+         </AdministrativeMedatata>
+      </administrativeMedatata>
+
+      <!--
+					
+				
+********************************  relatedItems follow *****************************************				
+				--><!--
+**************relatedItem****************
+--><relatedSeries>
+<!--
+*******************************************************
+   Top level element
+*******************************************************
+--><modsrdf:ModsResource rdf:about="http://www.loc.gov/mods/rdf/v1#MODS123456">
+<!--
+	
+*******************************************************
+  titles
+*******************************************************
+--><!--
+		
+*******  Principal Title
+--><titlePrincipal xmlns="http://www.loc.gov/mods/rdf/v1#">
+               <Title xmlns="http://www.loc.gov/mads/rdf/v1#">
+                  <label xmlns="http://www.w3.org/2000/01/rdf-schema#"/>
+                  <elementList rdf:parseType="Collection">
+
+                     <mainTitleElement>
+                        <elementValue/>
+                     </mainTitleElement>
+                  </elementList>
+               </Title>
+            </titlePrincipal>
+            <!--
+**************************************************************
+--></modsrdf:ModsResource>
+      </relatedSeries>
+
+      <!--
+**************relatedItem****************
+--><related>
+<!--
+*******************************************************
+   Top level element
+*******************************************************
+--><modsrdf:ModsResource rdf:about="http://www.loc.gov/mods/rdf/v1#MODS123456">
+
+<!--
+	
+*************************
+other elements 
+*************************
+-->
+<!--
+		
+***************location
+--><locationOfResource xmlns="http://www.loc.gov/mods/rdf/v1#">
+               <Location>
+                  <locationUrl>http://www.youtube.com/watch?v=ijMudcIM23Q</locationUrl>
+               </Location>
+            </locationOfResource>
+            <!--
+**************************************************************
+--></modsrdf:ModsResource>
+      </related>
+
+      <!--
+**************************************************************
+--></modsrdf:ModsResource>
+</rdf:RDF>
