@@ -1,5 +1,4 @@
-This XML file does not appear to have any style information associated with it. The document tree is shown below.
-      <!-- 
+<!-- 
 stylesheet to convert a MODS XML (version 3.x) record to RDF
 Ray Denenberg, Library of Congess
 
@@ -7,37 +6,71 @@ REVISED:  JUNE 7, 2013  (minor errors fixed)
 
 
 June 7: When links are supplied in the mods xml record, either via XLink or authorityURI,  these should be included in the resultant RDF.  The stylesheet now supports this for names, when  XLink is supplied.  (Will continue to enhance this for remaining cases.)
+-->
 
+<xsl:stylesheet version="2.0"><xsl:output method="xml" indent="yes"/>
 
-                                                         --><xsl:stylesheet version="2.0"><xsl:output method="xml" indent="yes"/><!-- 
+<!-- 
 *******************************************************
-                      Global Variables 
+                     Global Variables 
 ******************************************************
---><!-- 
-***********************************
-identifier lists
-**********************************
---><!--
-List of identifiers.  Used in identifier template.--><xsl:variable name="identifierList" select="'identifier', 'isbn', 'lccn', 'hdl', 'doi'"/><!-- 
+-->
 
-List of classification schemes.  Used in classification template.--><xsl:variable name="classificationSchemeList" select="'class','lcc', 'ddc'"/><!-- 
-List of relators (roles).  --><xsl:variable name="relatorsList" select="'act', 'anm', 'art', 'act', 'chr', 'com', 'cre' ,'cre' ,'edt','lyr','pbl' "/><!-- 
+<!-- 
 ***********************************
-other global variables
+        identifier lists
 **********************************
---><!-- a new line	 --><xsl:variable name="newline"><xsl:text>
-</xsl:text></xsl:variable><!-- 
-a line break	 --><xsl:variable name="linebreak"><xsl:comment>
-		
-</xsl:comment></xsl:variable><!-- 
-a space --><xsl:variable name="space"><xsl:text>  </xsl:text></xsl:variable><!-- 
-the string "yes"--><xsl:variable name="yes"><xsl:text>yes</xsl:text></xsl:variable><!-- 
-the string "no"--><xsl:variable name="no"><xsl:text>no</xsl:text></xsl:variable><!--
-Id for principal name
---><xsl:variable name="principalNameIdentifier" select="generate-id()"/><!-- 
-Generate principal name string (for use in nameTitle)
---><xsl:variable name="principalNameString"><xsl:for-each select="/mods:mods/mods:name"><xsl:if test="@usage                  or (                        (mods:role[mods:roleTerm='creator'] or mods:role[mods:roleTerm='cre'] )                     and count(                                /mods:mods/mods:name/mods:role[mods:roleTerm='creator']                                                                                or                                                                                                                                   /mods:mods/mods:name/mods:role[mods:roleTerm='cre']                                                                )=1                      and not(/mods:mods/mods:name/@usage)                     )"><xsl:call-template name="nameString"/></xsl:if></xsl:for-each></xsl:variable><!---     End  Global Variables 
-	 ******************************************* 
+-->
+<!--List of identifiers.  Used in identifier template.-->
+   
+   <xsl:variable name="identifierList" select="'identifier', 'isbn', 'lccn', 'hdl', 'doi'"/>
+   
+<!--List of classification schemes.  Used in classification template.-->
+
+   <xsl:variable name="classificationSchemeList" select="'class','lcc', 'ddc'"/>
+
+<!--List of relators (roles).  -->
+
+   <xsl:variable name="relatorsList" select="'act', 'anm', 'art', 'act', 'chr', 'com', 'cre' ,'cre' ,'edt','lyr','pbl' "/>
+
+<!-- 
+***********************************
+     other global variables
+**********************************
+-->
+<!-- a new line	 -->
+   <xsl:variable name="newline">
+      <xsl:text> </xsl:text>
+   </xsl:variable>
+<!-- a line break  -->
+   <xsl:variable name="linebreak">
+      <xsl:comment> </xsl:comment>
+   </xsl:variable>
+<!--  a space  -->
+   <xsl:variable name="space">
+      <xsl:text>  </xsl:text>
+   </xsl:variable>
+<!--  the string "yes"  -->
+   <xsl:variable name="yes">
+      <xsl:text>yes</xsl:text>
+   </xsl:variable>
+<!--  the string "no"  -->
+   <xsl:variable name="no">
+      <xsl:text>no</xsl:text>
+   </xsl:variable>
+<!--  Id for principal name  -->
+   <xsl:variable name="principalNameIdentifier" select="generate-id()"/>
+<!--  Generate principal name string (for use in nameTitle)  -->
+   <xsl:variable name="principalNameString">
+      <xsl:for-each select="/mods:mods/mods:name">
+         <xsl:if test="@usage  or (  (mods:role[mods:roleTerm='creator'] or mods:role[mods:roleTerm='cre'] )  and count(  /mods:mods/mods:name/mods:role[mods:roleTerm='creator']  or  /mods:mods/mods:name/mods:role[mods:roleTerm='cre']  )=1  and not(/mods:mods/mods:name/@usage)  )">
+            <xsl:call-template name="nameString"/>
+         </xsl:if>
+      </xsl:for-each>
+   </xsl:variable>
+<!---     End  Global Variables
+
+******************************************* 
 
 Rules and definitions:
 
@@ -57,21 +90,33 @@ If there is a uniflorm title (there should be no more than one, though this is n
 ***********************************************************
                    Main Template
 ***********************************************************
-	--><xsl:template match="/mods:mods"><!--  
-        Root element:
---><rdf:RDF><xsl:comment>
+-->
 
-This RDF description created by the stylesheet at http://www.loc.gov/standards/mods/modsrdf/modsrdf.xsl 
+<xsl:template match="/mods:mods">
+<!--  Root element:  -->
+   <rdf:RDF>
+      <xsl:comment>
 
-</xsl:comment><!-- --><xsl:call-template name="modsRecordOrRelatedItem"/></rdf:RDF></xsl:template><!-- 
+         This RDF description created by the stylesheet at http://www.loc.gov/standards/mods/modsrdf/modsrdf.xsl 
+
+      </xsl:comment>
+<!-- -->
+      <xsl:call-template name="modsRecordOrRelatedItem"/>
+   </rdf:RDF>
+   </xsl:template>
+<!-- 
 ***********************************************************
                    End Main Template
 
   Following is template for a MODS record or related item
 ***********************************************************
---><xsl:template name="modsRecordOrRelatedItem"><!--
+-->
+
+<xsl:template name="modsRecordOrRelatedItem">
+<!--
 ******************************************************************************************************************************************************
 ******************************************************************************************************************************************************
+
 MODS record is transformed in the following steps:
 
 1. Generate top-level triple
@@ -91,9 +136,9 @@ MODS record is transformed in the following steps:
 ******************************************************************************************************************************************************
 
 ****************************************************************
-*                                                                              *
-*             1. Generate top-level triple                           *
-*                                                                              *
+*                                                              *
+*             1. Generate top-level triple                     *
+*                                                              *
 ****************************************************************
 
 The followng generates an element of the form
@@ -105,31 +150,62 @@ representing the triple   "MODS12345  a ModsResource"
 This requires that an identifier of type 'modsIdentifier' has been added to the MODS record, explicitly for this purpose. For the above example the following would be added to the MODS record:
 
 	<identifier type="modsIdentifier">MODS12345</identifier>
---><xsl:comment>
+-->
+
+<xsl:comment>
 *******************************************************
    Top level element
 *******************************************************
-</xsl:comment><xsl:variable name="modsIdentifier"><xsl:choose><xsl:when test="/mods:mods/mods:identifier[@type='modsIdentifier']"><xsl:value-of select="/mods:mods/mods:identifier[@type='modsIdentifier']"/></xsl:when><xsl:otherwise><xsl:text>http://www.loc.gov/mods/rdf/v1#MODS123456</xsl:text></xsl:otherwise></xsl:choose></xsl:variable><xsl:element name="modsrdf:ModsResource"><xsl:attribute name="rdf:about"><xsl:value-of select="$modsIdentifier"/></xsl:attribute><xsl:value-of select="$newline"/><!-- 
+</xsl:comment>
+
+<xsl:variable name="modsIdentifier">
+   <xsl:choose>
+      <xsl:when test="/mods:mods/mods:identifier[@type='modsIdentifier']">
+         <xsl:value-of select="/mods:mods/mods:identifier[@type='modsIdentifier']"/>
+      </xsl:when>
+      <xsl:otherwise>
+         <xsl:text>http://www.loc.gov/mods/rdf/v1#MODS123456</xsl:text>
+      </xsl:otherwise>
+   </xsl:choose>
+</xsl:variable>
+
+<xsl:element name="modsrdf:ModsResource">
+   <xsl:attribute name="rdf:about">
+      <xsl:value-of select="$modsIdentifier"/>
+   </xsl:attribute>
+<xsl:value-of select="$newline"/>
+
+<!-- 
 ***********************************************************************************
-*                                                                                                      *
-*  2. Generate an rdf:type  statement for each resource type                 *
-*                                                                                                      *
+*                                                                                 *
+*  2. Generate an rdf:type  statement for each resource type                      *
+*                                                                                 *
 ***********************************************************************************
 
 The followng template call ("resourceType")  generates an rdf:type statement for each resourceType, for example:
 
 	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/resourceType#Text"/>
 
-	--><xsl:if test="mods:typeOfResource"><xsl:value-of select="$newline"/><xsl:comment>
+-->
+	<xsl:if test="mods:typeOfResource">
+	   <xsl:value-of select="$newline"/>
+	   <xsl:comment>
 	
-*******************************************************
-   rdf:type  statement for each resource type
-*******************************************************
-</xsl:comment><xsl:for-each select="mods:typeOfResource"><xsl:call-template name="resourceType"/></xsl:for-each></xsl:if><!-- 
+            *******************************************************
+            rdf:type  statement for each resource type
+            *******************************************************
+
+           </xsl:comment>
+        
+           <xsl:for-each select="mods:typeOfResource">
+              <xsl:call-template name="resourceType"/>
+           </xsl:for-each>
+        </xsl:if>
+<!-- 
 **************************************************************************************
-*                                                                                                         *
-*      3. Process  names  (and roles)                                                                      * 
-*                                                                                                         *
+*                                                                                    *
+*      3. Process  names  (and roles)                                                * 
+*                                                                                    *
 **************************************************************************************
 	--><xsl:if test="mods:name"><xsl:comment>
 	*******************************************************
