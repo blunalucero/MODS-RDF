@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <mods:mods xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xlink="http://www.w3.org/1999/xlink">
+  
+  <mods:identifier type="local">rbml.css.filename</mods:identifier>
+  
+  <mods:name authority="naf">
+    <mods:namePart>Hudson, Holland</mods:namePart>
+  </mods:name>
+
+  <mods:name authority="naf">
+    <mods:namePart>New York Association for Improving the Condition of the Poor. Bureau of Public Health and Hygiene </mods:namePart>
+  </mods:name>
+
+  <mods:name type="corporate" authority="naf">
+    <mods:namePart>Community Service Society of New York</mods:namePart>
+    <mods:role>
+      <mods:roleTerm type="text" authority="marcrelator">Collector</mods:roleTerm>
+    </mods:role>
+  </mods:name>
+
+  <mods:titleInfo>
+    <mods:title>Sewers, Sewage and Toilets</mods:title>
+  </mods:titleInfo>
+
+  <mods:note type="date source">Date based on the date range (1879-1950) of the photographic portion of the Community Service Society Collection.</mods:note>
+
+  <mods:originInfo>
+    <mods:dateCreated>1879-1950</mods:dateCreated>
+    <mods:dateCreated point="start" encoding="w3cdtf" keyDate="yes" qualifier="inferred">1879</mods:dateCreated>
+    <mods:dateCreated point="end" encoding="w3cdtf">1950</mods:dateCreated>
+  </mods:originInfo>
+
+  <mods:physicalDescription>
+    <mods:form authority="aat">photographs</mods:form>
+    <mods:digitalOrigin>reformatted digital</mods:digitalOrigin>
+    <mods:reformattingQuality>preservation</mods:reformattingQuality>
+  </mods:physicalDescription>
+
+  <mods:typeOfResource>still image</mods:typeOfResource>
+  
+  <mods:abstract>Description:Sewage on North River. 12 photographs. All photographs stamped: Bureau of Public Health and Hygiene.</mods:abstract>
+  
+  <mods:note>Item no. 0164</mods:note>
+  
+  <mods:note>Photograph no. 803</mods:note>
+
+  <mods:subject>
+    <mods:hierarchicalGeographic>
+      <mods:country>United States</mods:country>
+      <mods:state>New York (State)</mods:state>
+      <mods:city>New York (N.Y.)</mods:city>
+      <mods:county>Manhattan</mods:county>
+    </mods:hierarchicalGeographic>
+  </mods:subject>
+
+  <mods:subject authority="naf">
+    <mods:geographic>New York (N.Y.)</mods:geographic>
+  </mods:subject>
+
+  <mods:subject authority="lcsh">
+    <mods:topic>Sewerage</mods:topic>
+  </mods:subject>
+
+  <mods:subject authority="lcsh">
+    <mods:topic>Sewage</mods:topic>
+  </mods:subject>
+
+  <mods:subject authority="lcsh">
+    <mods:topic>Sanitation</mods:topic>
+  </mods:subject>
+
+  <mods:subject authority="lcsh">
+    <mods:topic>Public health</mods:topic>
+  </mods:subject>
+
+  <mods:relatedItem type="host" displayLabel="Collection">
+    <mods:titleInfo>
+      <mods:title>Community Service Society Records</mods:title>
+    </mods:titleInfo>
+  </mods:relatedItem>
+  
+  <mods:relatedItem type="host" displayLabel="Project">
+    <mods:titleInfo>
+      <mods:title>Community Service Society Photographs</mods:title>
+    </mods:titleInfo>
+    <mods:location>
+      <mods:url> http://css.cul.columbia.edu</mods:url>
+    </mods:location>
+  </mods:relatedItem>
+
+  <mods:location>
+    <mods:physicalLocation type="code" authority="marcorg">NNC-RB</mods:physicalLocation>
+    <mods:physicalLocation>Rare Book and Manuscript Library, Columbia University</mods:physicalLocation>
+    <mods:shelfLocator>Box no. 13</mods:shelfLocator>
+    <mods:shelfLocator>Folder no. 80</mods:shelfLocator>
+  </mods:location>
+
+  <mods:recordInfo>
+    <mods:recordContentSource authority="marcorg">NNC </mods:recordContentSource>
+    <mods:languageOfCataloging>
+      <mods:languageTerm type="code" authority="iso639-2b">eng</mods:languageTerm>
+    </mods:languageOfCataloging>
+    <mods:recordOrigin>Human created, edited in general conformance to the DLF Implementation Guidelines for Shareable MODS Records, Version 1.1.</mods:recordOrigin>
+  </mods:recordInfo>
+
+</mods:mods>
