@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods:mods xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mods="http://www.loc.gov/mods/v3">
+
+  <mods:identifier type="local">ave_biggert_00066</mods:identifier>
+
+  <mods:titleInfo>
+    <mods:title>Allyn House, Hartford, Conn., envelope, recto, 1863</mods:title>
+  </mods:titleInfo>
+
+  <mods:name type="corporate" authority="naf">
+    <mods:namePart>Columbia University. Libraries</mods:namePart>
+    <mods:role>
+      <mods:roleTerm type="text" authority="rdaroles" valueURI="http://RDVocab.info/roles/issuingBodyWork" authorityURI="http://RDVocab.info/roles">issuing body</mods:roleTerm>
+    </mods:role>
+  </mods:name>
+
+  <mods:originInfo>
+    <mods:place supplied="yes">
+      <mods:placeTerm type="text">New York, N.Y.</mods:placeTerm>
+    </mods:place>
+    <mods:publisher>Columbia University Libraries</mods:publisher>
+    <mods:dateIssued qualifier="inferred" encoding="marc">2010</mods:dateIssued>
+    <mods:issuance>single unit</mods:issuance>
+  </mods:originInfo>
+
+  <mods:genre authority="rdacontent" valueURI="http://RDVocab.info/termList/RDAContentType/1014" authorityURI="http://RDVocab.info/termList/RDAContentType">still image</mods:genre>
+    
+  <mods:physicalDescription>
+    <mods:extent>1 online resource (1 envelope)</mods:extent>
+    <mods:form type="media" authority="rdamedia" valueURI="http://RDVocab.info/termLIst/RDAMediaType/1003" authorityURI="http://RDVocab.info/termLIst/RDAMediaType">computer</mods:form>
+    <mods:form type="carrier" authority="rdacarrier" valueURI="http://RDVocab.info/termList/RDACarrierType/1018" authorityURI=" http://RDVocab.info/termList/RDACarrierType ">online resource</mods:form>
+    <mods:internetMediaType>JPEG</mods:internetMediaType>
+    <mods:digitalOrigin>reformatted digital</mods:digitalOrigin>
+  </mods:physicalDescription>
+
+  <mods:note type="title">Title devised by cataloger (viewed on Nov. 18, 2010)</mods:note>
+
+  <mods:abstract>An envelope with printed image of Allyn House in Hartford, Conn., on the corner of Asylum Street and Trumbull Street. The hotel was built in 1857. It was torn down in 1960</mods:abstract>
+
+  <mods:note>"Allyn House, Hartford, Conn., T.M. Allyn, Proprietor"--Printed on evelope recto</mods:note>
+
+  <mods:subject>
+    <mods:name type="corporate">
+      <mods:namePart>Allyn House (Hartford, Conn.)</mods:namePart>
+    </mods:name>
+  </mods:subject>
+
+  <mods:subject authority="lcsh" authorityURI="http://id.loc.gov/authorities#conceptscheme">
+    <mods:topic valueURI="http://id.loc.gov/authorities/sh85062487#concept">Hotels</mods:topic>
+    <mods:geographic authority="naf">Connecticut</mods:geographic>
+    <mods:geographic authority="naf">Hartford</mods:geographic>
+  </mods:subject>
+
+  <mods:location>
+    <mods:url access="object in context" usage="primary display">http://biggert.cul.columbia.edu/items/view/ave_biggert_00066</mods:url>
+  </mods:location>
+
+  <mods:relatedItem type="host">
+    <mods:titleInfo>
+      <mods:title>Biggert Collection of Architectural Vignettes on Commercial Stationery</mods:title>
+    </mods:titleInfo>
+    <mods:location>
+      <mods:url usage="primary display">http://biggert.cul.columbia.edu/</mods:url>
+    </mods:location>
+  </mods:relatedItem>
+
+  <mods:relatedItem type="original" displayLabel="electronic reproduction of (item)">
+    <mods:titleInfo>
+      <mods:title>Allyn House, Hartford, Conn., envelope, recto, 1863</mods:title>
+    </mods:titleInfo>
+    <mods:note type="title">Title devised by cataloger</mods:note>
+    <mods:originInfo>
+      <mods:place supplied="yes">
+        <mods:placeTerm>United States?</mods:placeTerm>
+      </mods:place>
+      <mods:dateCreated encoding="marc" keyDate="yes">1863</mods:dateCreated>
+      <mods:issuance>single unit</mods:issuance>
+    </mods:originInfo>
+    <mods:genre authority="rdacontent" valueURI="http://rdvocab.info/termList/RDAContentType/1014" authorityURI="http://RDVocab.info/termList/RDAContentType">still image</mods:genre>
+    <mods:physicalDescription>
+      <mods:extent>1 envelope</mods:extent>
+      <mods:form type="media" authority="rdamedia" valueURI=" http://RDVocab.info/termLIst/RDAMediaType/1007 " authorityURI="http://RDVocab.info/termLIst/RDAMediaType">unmediated</mods:form>
+      <mods:form type="carrier" authority="rdacarrier" valueURI="http://RDVocab.info/termList/RDACarrierType/1059" authorityURI="http://RDVocab.info/termList/RDACarrierType">object</mods:form>
+    </mods:physicalDescription>
+    <mods:location>
+      <mods:physicalLocation>Avery Architectural and Fine Arts Library</mods:physicalLocation>
+    </mods:location>
+  </mods:relatedItem>
+
+  <mods:recordInfo>
+    <mods:recordContentSource>NNC</mods:recordContentSource>
+    <mods:recordIdentifier>MODSRDA0004</mods:recordIdentifier>
+    <mods:recordOrigin>Record human prepared according to RDA</mods:recordOrigin>
+    <mods:languageOfCataloging>
+      <mods:languageTerm authority="iso639-2b">eng</mods:languageTerm>
+    </mods:languageOfCataloging>
+    <mods:recordCreationDate encoding="w3cdtf">2010-11-22</mods:recordCreationDate>
+  </mods:recordInfo>
+
+</mods:mods>
