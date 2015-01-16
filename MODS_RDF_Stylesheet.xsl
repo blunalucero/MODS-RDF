@@ -12,6 +12,7 @@ June 7: When links are supplied in the mods xml record, either via XLink or auth
                                                          -->
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:modsrdf="http://www.loc.gov/mods/rdf/v1#" xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:identifier="http://id.loc.gov/vocabulary/identifier/" xmlns:relator="http://id.loc.gov/vocabulary/relator/" xmlns:note="http://id.loc.gov/vocabulary/note/" xmlns:abstract="http://id.loc.gov/vocabulary/abstract/" xmlns:access="http://id.loc.gov/vocabulary/access/" xmlns:class="http://id.loc.gov/vocabulary/class/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:ri="http://id.loc.gov/ontologies/RecordInfo#" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<xsl:output method="xml" indent="yes"/>
+	<xsl:strip-space elements="*"/>
 	<!-- 
 *******************************************************
                       Global Variables 
