@@ -180,8 +180,8 @@ This requires that an identifier of type 'modsIdentifier' has been added to the 
 </xsl:comment>
 		<xsl:variable name="modsIdentifier">
 			<xsl:choose>
-				<xsl:when test="/mods:mods/mods:identifier[@type='modsIdentifier']">
-					<xsl:value-of select="/mods:mods/mods:identifier[@type='modsIdentifier']"/>
+				<xsl:when test="./mods:identifier[@type='modsIdentifier']">
+					<xsl:value-of select="./mods:identifier[@type='modsIdentifier']"/>
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:text>http://www.loc.gov/mods/rdf/v1#MODS123456</xsl:text>
@@ -488,7 +488,7 @@ If the classification scheme (authority attribute) belongs to the list (see top)
 			</xsl:when>
 			<xsl:otherwise>
 				<modsrdf:classificationGroup>
-					<ClassificationGroup>
+					<ClassificationGroup xmlns="http://www.loc.gov/mods/rdf/v1#">
 						<classificationGroupScheme>
 							<xsl:value-of select="$scheme"/>
 						</classificationGroupScheme>
@@ -552,7 +552,7 @@ If the classification scheme (authority attribute) belongs to the list (see top)
 			</xsl:when>
 			<xsl:otherwise>
 				<modsrdf:identifierGroup>
-					<IdentifierGroup>
+					<IdentifierGroup xmlns="http://www.loc.gov/mods/rdf/v1#">
 						<identifierGroupType>
 							<xsl:value-of select="$type"/>
 						</identifierGroupType>
@@ -1307,7 +1307,7 @@ remaining admin metadata elements
 		</xsl:variable>
 		<!-- -->
 		<!-- -->
-		<xsl:element name="{concat('related', $Type)}">
+		<xsl:element name="{concat('related', $Type)}" namespace="http://www.loc.gov/mods/rdf/v1#">
 			<xsl:value-of select="$newline"/>
 			<xsl:call-template name="modsRecordOrRelatedItem"/>
 			<xsl:value-of select="$newline"/>
