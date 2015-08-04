@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modsCollection 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns="http://www.loc.gov/mods/v3" 
+    xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
+    <mods xmlns="http://www.loc.gov/mods/v3" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        version="3.5" 
+        xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
+        <titleInfo>
+            <title>Douleia</title>
+            <subTitle>esclavage et pratiques discursives dans l'athènes classique</subTitle>
+        </titleInfo>
+        <name type="personal" usage="primary" authorityURI="http://viaf.org" valueURI="http://viaf.org/viaf/7393715/">
+        </name>
+        <typeOfResource>text</typeOfResource>
+        <genre authority="marcgt">bibliography</genre>
+        <originInfo>
+            <place>
+                <placeTerm type="code" authority="marccountry">fr</placeTerm>
+            </place>
+            <place>
+                <placeTerm type="text">Paris</placeTerm>
+            </place>
+            <publisher>Belles Lettres</publisher>
+            <dateIssued>1980</dateIssued>
+            <issuance>monographic</issuance>
+        </originInfo>
+        <language>
+            <languageTerm authority="iso639-2b" type="code">fre</languageTerm>
+        </language>
+        <physicalDescription>
+            <form authority="marcform">print</form>
+            <extent>217 p. ; 24 cm.</extent>
+        </physicalDescription>
+        <note type="statement of responsibility" altRepGroup="00">Marie-Madeleine Mactoux.</note>
+        <subject authority="lcsh">
+            <topic authorityURI="http://id.loc.gov" valueURI="http://id.loc.gov/authorities/subjects/sh85123335"></topic>
+        </subject>
+        <subject authority="lcsh" authorityURI="http://id.loc.gov" valueURI="http://id.loc.gov/authorities/subjects/sh85123323">
+            <topic authorityURI="http://id.loc.gov" valueURI="http://id.loc.gov/authorities/subjects/sh85123314"></topic>
+            <geographic>Greece</geographic>
+        </subject>
+        <location>
+            <physicalLocation displayLabel="Institution Code">IU</physicalLocation>
+            <holdingSimple>
+                <copyInformation>
+                    <subLocation>Oak Street Facility [request only]</subLocation>
+                    <shelfLocator>326.938 M25D</shelfLocator>
+                    <note displayLabel="Copy Number">1</note>
+                    <note displayLabel="Barcode">30112059732039</note>
+                </copyInformation>
+            </holdingSimple>
+        </location>
+        <identifier type="isbn">225160250X</identifier>
+        <identifier type="oclc">ocm08276707</identifier>
+        <identifier type="uri" displayLabel="WorldCat Linked Data">http://www.worldcat.org/oclc/08276707</identifier>
+        <recordInfo>
+            <descriptionStandard>aacr</descriptionStandard>
+            <recordCreationDate encoding="marc">820326</recordCreationDate>
+            <recordChangeDate encoding="iso8601">20020415161257.0</recordChangeDate>
+            <recordIdentifier>314</recordIdentifier>
+            <recordOrigin>Converted from MARCXML to MODS version 3.5 using MARC21slim2MODS3-5.xsl
+                (Revision 1.96 2014/04/22)</recordOrigin>
+        </recordInfo>
+    </mods>
+    <mods 
+        xmlns="http://www.loc.gov/mods/v3" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        version="3.5" 
+        xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
+        <titleInfo>
+            <title>Martial et l'esclavage</title>
+        </titleInfo>
+        <typeOfResource>text</typeOfResource>
+        <genre authority="marcgt">bibliography</genre>
+        <originInfo>
+            <place>
+                <placeTerm type="code" authority="marccountry">fr</placeTerm>
+            </place>
+            <place>
+                <placeTerm type="text">Paris</placeTerm>
+            </place>
+            <publisher>Belles Lettres</publisher>
+            <dateIssued>1981</dateIssued>
+            <issuance>monographic</issuance>
+        </originInfo>
+        <language>
+            <languageTerm authority="iso639-2b" type="code">fre</languageTerm>
+        </language>
+        <physicalDescription>
+            <form authority="marcform">print</form>
+            <extent>241 p. : ill., map ; 24 cm.</extent>
+        </physicalDescription>
+        <note type="statement of responsibility" altRepGroup="00">M. Garrido-Hory.</note>
+        <subject authority="lcsh">
+            <topic authorityURI="http://id.loc.gov" valueURI="http://id.loc.gov/authorities/subjects/sh85123339"></topic>
+        </subject>
+        <subject authority="lcsh" authorityURI="http://id.loc.gov" valueURI="http://id.loc.gov/authorities/subjects/sh85123324">
+            <topic authorityURI="http://id.loc.gov" valueURI="http://id.loc.gov/authorities/subjects/sh85123314"></topic>
+            <geographic>Rome</geographic>
+        </subject>
+        <location>
+            <physicalLocation displayLabel="Institution Code">IU</physicalLocation>
+            <holdingSimple>
+                <copyInformation>
+                    <subLocation>Main Stacks</subLocation>
+                    <shelfLocator>C .44B46JLser.2 v.255-256</shelfLocator>
+                    <note displayLabel="Copy Number">1</note>
+                    <note displayLabel="Barcode">38888123170106</note>
+                </copyInformation>
+            </holdingSimple>
+        </location>
+        <location>
+            <physicalLocation displayLabel="Institution Code">IU</physicalLocation>
+            <holdingSimple>
+                <copyInformation><subLocation>Main Stacks</subLocation>
+                    <shelfLocator>326.937 G193M</shelfLocator>
+                    <note displayLabel="Copy Number">1</note>
+                    <note displayLabel="Barcode">30112059731882</note>
+                </copyInformation>
+            </holdingSimple>
+        </location>
+        <identifier type="isbn">2251602550</identifier>
+        <identifier type="oclc">ocm08276772</identifier>
+        <identifier type="uri" displayLabel="WorldCat Linked Data">http://www.worldcat.org/oclc/08276772</identifier>
+        <recordInfo>
+            <descriptionStandard>aacr</descriptionStandard>
+            <recordCreationDate encoding="marc">820326</recordCreationDate>
+            <recordChangeDate encoding="iso8601">20020415161257.0</recordChangeDate>
+            <recordIdentifier>315</recordIdentifier>
+            <recordOrigin>Converted from MARCXML to MODS version 3.5 using MARC21slim2MODS3-5.xsl
+                (Revision 1.96 2014/04/22)</recordOrigin>
+        </recordInfo>
+    </mods>
+</modsCollection>
