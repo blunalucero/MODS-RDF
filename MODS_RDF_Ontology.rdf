@@ -20,18 +20,18 @@
   <owl:Ontology rdf:about="">
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
     <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
-    <owl:imports rdf:resource="http://marklogic3.loc.gov:8281/ontologies/ClassificationSchemes"/>
-    <owl:imports rdf:resource="http://marklogic3.loc.gov:8281/ontologies/ResourceTypes"/>
+    <owl:imports rdf:resource="http://id.loc.gov/ontologies/ClassificationSchemes"/>
+    <owl:imports rdf:resource="http://id.loc.gov/ontologies/ResourceTypes"/>
     <owl:imports rdf:resource="http://www.loc.gov/standards/mads/rdf/v1.rdf"/>
     <owl:imports rdf:resource="http://purl.org/vocab/changeset/schema"/>
     <owl:imports rdf:resource="http://vocab.org/changeset/"/>
     <owl:imports rdf:resource="http://www.w3.org/2008/05/skos-xl"/>
     <owl:imports rdf:resource="http://purl.org/dc/dcmitype/"/>
-    <owl:imports rdf:resource="http://marklogic3.loc.gov:8281/ontologies/Roles"/>
+    <owl:imports rdf:resource="http://id.loc.gov/ontologies/Roles"/>
     <owl:imports rdf:resource="http://purl.org/dc/elements/1.1/"/>
-    <owl:imports rdf:resource="http://marklogic3.loc.gov:8281/ontologies/TargetAudiences"/>
+    <owl:imports rdf:resource="http://id.loc.gov/ontologies/TargetAudiences"/>
     <owl:imports rdf:resource="http://www.loc.gov/mads/rdf/v1"/>
-    <owl:imports rdf:resource="http://marklogic3.loc.gov:8281/ontologies/Identifiers"/>
+    <owl:imports rdf:resource="http://id.loc.gov/ontologies/Identifiers"/>
     <owl:imports rdf:resource="http://purl.org/vocab/vann/"/>
   </owl:Ontology>
   <owl:Class rdf:about="ri:AdminMetadata">
